@@ -11,3 +11,4 @@ def login():
 @app.route('/panel')
 def panel():
     return render_template('views/panel/index.html')
+
