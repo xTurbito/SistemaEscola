@@ -1,0 +1,73 @@
+
+{% extends 'layout/layoutpanel.html' %}
+
+{% block title %}Principal{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.css">
+{% endblock %}
+
+{% block title_view %}Licenciaturas{% endblock %}
+
+{% block description_view %}Aqui puedes ver todas las Licenciaturas{% endblock %}
+
+{% block content %}
+<div class="container-xl px-4 mt-n10">
+    <div class="card mb-4">
+        <div class="card-header">Detalles</div>
+        <div class="card-body">
+            <table id="example" class="table table-striped nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for campu in campus %}
+                    <tr>
+                        <td>{{campu.1}}</td>
+                        <td>{{campu.2}}</td>
+                        <td>{{campu.3}}</td>
+                        <td>
+                            <a href="/editCampus/{{campu.0}}"><i class="fa-solid fa-pen-to-square" style="color: #494a4b;"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="row">
+            <div class="col-sm text-center">
+                <a class="btn btn-dark" href="/addLicenciatura" role="button">Agregar</a>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm text-center">
+                <a class="btn btn-dark" href="activar_inmobiliaria" role="button">Activar / Desactivar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            responsive: true
+        });
+    });
+</script>
+{% endblock %}

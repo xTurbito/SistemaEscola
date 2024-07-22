@@ -1,0 +1,56 @@
+<nav class="sidenav shadow-right sidenav-dark">
+    <div class="sidenav-menu">
+        <div class="nav accordion" id="accordionSidenav">
+            <!-- Sidenav Menu Heading (Account)-->
+            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+            <div class="sidenav-menu-heading d-sm-none">Perfil</div>
+            <!-- Sidenav Link (Alerts)-->
+            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+            <a class="nav-link d-sm-none" href="#!">
+                <div class="nav-link-icon"><i data-feather="bell"></i></div>
+                Alertas
+                <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
+            </a>
+            
+            <!-- Inicia Menu -->
+            <!-- Dashboard-->
+            <a class="nav-link mt-2" href="/inicio">
+                <div class="nav-link-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                Dashboard
+            </a>
+            <!-- Inio de Herramientas -->
+            <div class="sidenav-menu-heading">Herramientas</div>
+            <!-- Menu Campus -->
+            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseCampus" aria-expanded="false" aria-controls="collapseCampus">
+                <div class="nav-link-icon"><i class="fa-solid fa-school"></i></div>
+                Campus
+                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseCampus" data-bs-parent="#accordionSidenav">
+                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                    <a id="a_ver_campus" class="nav-link" href="/campus">Ver</a>
+                </nav>
+            </div>
+            
+            <!--Menu Licenciatura-->
+            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLicenciatura" aria-expanded="false" aria-controls="collapseLicenciatura">
+                <div class="nav-link-icon"><i class="fa-solid fa-book"></i></div>
+                Licenciatura
+                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseLicenciatura" data-bs-parent="#accordionSidenav">
+                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
+                    <a id="a_ver_licenciatura" class="nav-link" href="/licenciaturas">Ver</a>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Sidenav Footer-->
+    <div class="sidenav-footer">
+        <div class="sidenav-footer-content">
+            <div class="sidenav-footer-subtitle">Sesi&oacute;n:</div>
+            <div class="sidenav-footer-title">AQUI VA QUIEN INICIO SESION</div>
+        </div>
+    </div>
+</nav>

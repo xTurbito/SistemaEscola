@@ -1,0 +1,27 @@
+{% extends 'layout/layoutpanel.html' %}
+
+{% block title %}Principal{% endblock %}
+
+{% block title_view %}Dashboard{% endblock %}
+
+{% block description_view %}Bienvenidos{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xl-4 mb-4">
+        <!-- Dashboard example card 1-->
+        <a class="card lift h-100" href="#!">
+            <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="me-3">
+                        <i class="fa-solid fa-calculator fa-xl text-primary mb-3"></i>
+                        <h5>Comisiones</h5>
+                        <div class="text-muted small">Aqui puedes ver las comisiones</div>
+                    </div>
+                    <img src="assets/img/illustrations/browser-stats.svg" alt="..." style="width: 8rem" />
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

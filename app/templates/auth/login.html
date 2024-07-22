@@ -1,0 +1,70 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %} Inicio Sesion {% endblock %}
+
+{% block body %}
+<style>
+    body, html {
+        height: 100%;
+        overflow: hidden; /* Evita el desbordamiento vertical */
+    }
+    .input-container {
+      position: relative;
+    }
+    .input-container input {
+      padding-left: 30px; /* Ajusta este valor según el tamaño del ícono */
+    }
+    .input-container i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+    .navbar-gradient {
+        background: linear-gradient(to right, rgba(128, 128, 128, 0.5), rgba(192, 192, 192, 0.5)) !important;
+        border: none;
+    }
+    .navbar-brand img {
+      border-radius: 50%;
+      width: 100px; 
+      height: 100px; 
+      object-fit: cover;
+      border: 5px solid whitesmoke;
+    }
+    main {
+    background-image: url("{{ url_for('static', filename='images/Fondo.jpeg') }}");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+</style>
+<nav class="navbar bg-body-tertiary navbar-gradient">
+    <div class="container-fluid">
+        <picture class="navbar-brand">
+            <source srcset="{{ url_for('static', filename='images/logo.webp') }}" type="image/webp">
+            <source srcset="{{ url_for('static', filename='images/logo.jpg') }}" type="image/jpeg">
+            <img loading="lazy" src="{{ url_for('static', filename='images/logo.jpg') }}" width="100" alt="Logo Upp">
+        </picture>
+        <h2>UNIVERSIDAD PRIVADA DE LA PENÍNSULA</h2>
+        <form class="d-flex" role="search" action="/login" method="POST">
+            <div class="input-container">
+                <i class="fa-solid fa-user"></i>
+                <input class="form-control" type="email" name="correo" placeholder="ejemplo@hotmail.com">
+            </div>
+            <div class="input-container">
+                <i class="fa-solid fa-key"></i>
+                <input class="form-control" type="password" name="password" placeholder="Contraseña">
+            </div>
+            <input class="btn btn-primary" type="submit" value="ENTRAR">
+        </form>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <!-- Contenido adicional aquí -->
+    </div>
+</main>
+{% endblock body %}
