@@ -1,8 +1,8 @@
 import sys
 import os
 
-# Agrega el directorio del proyecto al sys.path
-sys.path.insert(0, '/home/malcocer/mysite')
+# Asegúrate de que sys.path apunte a la raíz del proyecto
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Importa la aplicación desde app
 from app import create_app
