@@ -27,7 +27,7 @@ def login():
             idUsuario = user[0]
             session['logged_in'] = True
             session['idUsuario'] = idUsuario
-            return redirect(url_for('auth.index'))  # Cambia 'campus.index' según el controlador y la vista a la que quieras redirigir
+            return redirect(url_for('panel.index'))  # Cambia 'campus.index' según el controlador y la vista a la que quieras redirigir
         else:
             flash('Login fallido. Verifica tu usuario y contraseña', 'error')
             return redirect(url_for('auth.index'))  # Redirige a la página de login si el usuario falla en la autenticación

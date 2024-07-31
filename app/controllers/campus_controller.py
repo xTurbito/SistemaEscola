@@ -1,6 +1,6 @@
 from flask import Blueprint, request, redirect, url_for, session, flash
 from app.models.database import get_db_connection
-from app.views.campus_views import render_campus_index, render_edit_campus
+from app.views.campus_views import render_campus_index, render_edit_campus, render_add_campus
 
 campus_bp = Blueprint('campus', __name__, url_prefix='/campus')
 
@@ -23,3 +23,8 @@ def edit(id):
     cur.close()
     conn.close()
     return render_edit_campus(campus_data)
+
+@campus_bp.route('/add', methods=['GET'])
+def add():
+    return render_add_campus()
+    
